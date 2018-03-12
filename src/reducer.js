@@ -1,7 +1,11 @@
 // reducer.js
+
 import {combineReducers} from 'redux'
-import {responsiveStateReducer} from 'redux-responsive'
+import {createResponsiveStateReducer} from 'redux-responsive'
 
 export default combineReducers({
-    browser: responsiveStateReducer,
+    // passing null to the reducer factory uses the default breakpoints
+    browser: createResponsiveStateReducer(null, {
+        infinity: "veryBig"
+    })
 })
